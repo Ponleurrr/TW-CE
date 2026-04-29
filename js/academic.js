@@ -30,6 +30,7 @@ function filterSubcategory(subcategory) {
     showResults(filtered);
 }
 
+// render product cards
 
 function renderProducts(list) {
     const container = document.getElementById("productContainer");

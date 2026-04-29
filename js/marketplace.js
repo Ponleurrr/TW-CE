@@ -10,6 +10,7 @@ let currentFilters = {
     price: null,
     condition: null
 };
+let currentSubcategory = null;
 
 function getFilteredProducts() {
     let filtered = [...products];
@@ -305,7 +306,9 @@ function showResults(list) {
 
     const mode = getMode();
 
-    if (mode === "search") {
+    if (currentSubcategory && mode === "all") {
+        title.textContent = currentSubcategory.toUpperCase();
+    } else if (mode === "search") {
         title.textContent = "Search Results";
     } else if (mode === "filter") {
         title.textContent = "Filter Results";
@@ -334,6 +337,20 @@ function getMode() {
     if (hasFilter || hasSub) return "filter";
 
     return "all";
+}
+
+function filterSubcategory(subcategory) {
+    currentSubcategory = subcategory;
+
+    currentFilters = {
+        price: null,
+        condition: null
+    };
+
+    currentKeyword = "";
+
+    const filtered = products.filter(p => p.subcategory === subcategory);
+    showResults(filtered);
 }
 
 
