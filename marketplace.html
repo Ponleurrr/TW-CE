@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twice Marketplace</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <link rel="stylesheet" href="css/marketplace.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+
+    
+    <div class="carousel">
+        <!-- search and filter -->
+        <div class="top-bar">
+            <!-- Twice Logo -->
+            <a href="marketplace.html" class="logo-link">
+                <img src="images/twice_logo.png" alt="TWICE" class="logo">
+            </a>
+            
+            <div class="search-wrapper">
+                <i data-lucide="scan-search" class="search-icon"></i>  
+                <input type="text" id="searchInput" placeholder="Search products..." class="search-bar">
+                <div id="searchSuggestions" class="suggestions-box"></div>
+            </div>
+
+            <!-- filter -->
+            <div class="filter-wrapper">
+                <button class="filter-button" id="filterBtn">
+                    <i data-lucide="sliders-horizontal"></i>
+                </button>
+
+                <div class="filter-dropdown" id="filterDropdown">
+                    <p class="filter-title">Filters</p>
+
+                    <div class="filter-section">
+                        <p class="label">Price</p>
+                        <label class="radio-option">
+                            <input type="radio" name="price" value="high">
+                            <span>High → Low</span>
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio" name="price" value="low">
+                            <span>Low → High</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <p class="label">Condition</p>
+                        <label class="radio-option">
+                            <input type="radio" name="condition">
+                            <span>Good</span>
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio" name="condition">
+                            <span>Fair</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- search and filter -->
+        <div class="carousel-track" id="track">
+            <img src="images/home-collaboration/1.png">
+            <img src="images/home-collaboration/2.png">
+            <img src="images/home-collaboration/3.png">
+            <img src="images/home-collaboration/4.png">
+            <img src="images/home-collaboration/5.png">
+        </div>
+    </div>
+
+    <script>
+    let index = 0;
+    const track = document.getElementById("track");
+    const totalSlides = 5;
+
+    setInterval(() => {
+        index++;
+        if (index >= totalSlides) index = 0;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }, 2000);
+    </script>
+
+    
+    <!-- categories -->
+    <div class="category">
+        <a href="academic.html" class="category-link">
+            <div class="category_box"><h3><i data-lucide="graduation-cap"></i> <strong> Academic </strong></h3></div>
+        </a>
+        <a href="tech.html" class="category-link">
+            <div class="category_box"><h3><i data-lucide="monitor-smartphone"></i> <strong>Tech Gadget</strong></h3></div>
+        </a>
+    </div>
+
+    <!-- sections -->
+
+    <div class="sections">
+
+        <!-- Search / Filter Results -->
+        <div id="resultsSection" style="display: none;">
+            <h2 id="resultsTitle">Search Results</h2>
+            <div class="product-row" id="resultsContainer"></div>
+        </div>
+        <!-- Trending section -->
+            <h2><strong>Trending</strong></h2>
+            <div id="trendingContainer" class="product-row"></div>
+        <!-- Recently Added Section -->
+            <h2><strong>Recently Added</strong></h2>
+            <div id="recentContainer" class="product-row"></div>
+        <!-- Recommendation Section -->
+            <h2><strong>Recommendation</strong></h2>
+            <div id="recommendContainer" class="product-row"></div>
+
+    </div>
+
+    <script>
+    document.querySelectorAll('.favorite').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const product = btn.dataset.product;
+
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+            if (favorites.includes(product)) {
+                favorites = favorites.filter(item => item !== product);
+                btn.classList.remove('active');
+            } else {
+                favorites.push(product);
+                btn.classList.add('active');
+            }
+
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+
+            window.location.href = "favorites.html";
+        });
+    });
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Make sure icons are created AFTER page is loaded
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+
+<script src="js/products.js"></script>
+<script src="js/marketplace.js"></script>
+</body>
+</html>

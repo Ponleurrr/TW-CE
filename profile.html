@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile - TW!CE</title>
+
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="icon" type="image/png" href="images/twice_logo1.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo" onclick="goHome()">
+    <img src="images/twice_logo.png">
+  </div>
+
+  <div class="menu-icon">
+    <i class="fa-solid fa-bars"></i>
+    <div class="content">
+      <a href="">Home</a>
+      <a href="">Profile</a>
+      <a href="">Sell Items</a>
+    </div>
+  </div>
+
+  <div class="nav-desktop">
+    <div class="search-bar">
+      <input type="text" placeholder="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="nav-icons">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <i class="fa-solid fa-circle-user"></i>
+    </div>
+  </div>
+</nav>
+
+<section class="profile-page">
+
+  <div class="sidebar">
+
+    <div class="profile-header">
+      <img src="images/Profile/Iam the Mew.png" class="profile-pic">
+      <div class="username">Iam the Mew</div>
+      <a href="#" class="change-profile">Change Profile</a>
+    </div>
+
+    <div class="menu-section">
+      <div class="menu">
+        <a href="#" class="menu-item active" onclick="showSection('personal', this)">Personal Information</a>
+        <a href="#" class="menu-item" onclick="showSection('listings', this)">My Listings</a>
+        <a href="#" class="menu-item" onclick="showSection('purchase', this)">Purchase History</a>
+        <a href="#" class="menu-item" onclick="showSection('ratings', this)">Ratings & Feedback</a>
+        <a href="#" class="menu-item" onclick="showSection('saved', this)">Saved Items</a>
+      </div>
+
+      <div class="spacer"></div>
+      <button class="logout">Logout</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section active" id="personal">
+      <h2>Personal Information</h2>
+
+      <form class="profile-form">
+
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="gender">
+            <label><input type="radio" name="gender"> Male</label>
+            <label><input type="radio" name="gender"> Female</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" placeholder="Iam the Mew">
+        </div>
+
+        <div class="form-group">
+          <label>Bio</label>
+          <textarea placeholder="Help buy from me so that I have money for KNY"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>School</label>
+          <input type="text" placeholder="American University of Phnom Penh">
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" placeholder="Khan Russei Keo, Phnom Penh, Cambodia">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" placeholder="012 345 678">
+        </div>
+
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="iamthemew@school.com">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="xxxxxxxxxx">
+        </div>
+
+        <button type="button" onclick="saveProfile()" class="save-btn">
+          Save Changes
+        </button>
+
+      </form>
+    </div>
+
+    <div class="section" id="listings">
+
+      <div class="listings-header">
+        <h2>My Listings</h2>
+        <a href="sell-items.html" class="sell-btn">+ Sell Item</a>
+      </div>
+
+      <div class="listing-tabs">
+        <button class="tab active" onclick="showListingTab('active')">Active</button>
+        <button class="tab" onclick="showListingTab('sold')">Sold</button>
+      </div>
+
+      <div class="listing-box active-tab" id="active">
+
+        <div class="product-card">
+          <img src="images/Profile/Charger.jpg" class="product-img">
+
+          <div class="product-info">
+            <div class="product-name">Charger</div>
+            <div class="product-price">$6.00</div>
+
+            <div class="product-meta">
+              <div>Condition: Used - Good</div>
+              <div>Status: Active</div>
+              <div>Posted: 2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/Profile/Cool Clock.jpg" class="product-img">
+
+          <div class="product-info">
+            <div class="product-name">Cool Clock</div>
+            <div class="product-price">$9.50</div>
+
+            <div class="product-meta">
+              <div>Condition: Used - Good</div>
+              <div>Status: Active</div>
+              <div>Posted: 2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="listing-box" id="sold">
+
+        <div class="product-card">
+          <img src="images/Profile/Sticker Note.jpg" class="product-img">
+
+          <div class="product-info">
+            <div class="product-name">Sticker Note</div>
+            <div class="product-price">$1.50</div>
+
+            <div class="product-meta">
+              <div>Condition: Used - Good</div>
+              <div>Status: Sold</div>
+              <div>Sold: 2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/Profile/Special Pencil Case.jpg" class="product-img">
+
+          <div class="product-info">
+            <div class="product-name">Special Pencil Case</div>
+            <div class="product-price">$19.00</div>
+
+            <div class="product-meta">
+              <div>Condition: Used - Good</div>
+              <div>Status: Sold</div>
+              <div>Sold: 2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section" id="purchase">
+
+      <h2>Purchase History</h2>
+
+      <div class="purchase-card">
+
+        <div class="product-card">
+          <img src="images/Profile/Salt Friend.jpg" class="product-img">
+
+          <div class="product-info">
+            <div class="product-name">Salt Friend</div>
+            <div class="product-price">$9.00</div>
+
+            <div class="product-meta">
+              <div>Seller: MEENI</div>
+              <div>Purchased on: Mar 25, 2026</div>
+              <div>Status: Completed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-box">
+
+          <div class="rate-row">
+            <label>Rate Seller:</label>
+            <select>
+              <option>⭐ 1</option>
+              <option>⭐ 2</option>
+              <option>⭐ 3</option>
+              <option>⭐ 4</option>
+              <option>⭐ 5</option>
+            </select>
+          </div>
+
+          <textarea placeholder="Leave a comment..."></textarea>
+          <button class="submit-review">Submit</button>
+
+        </div>
+      </div>
+
+      <div class="purchase-card">
+
+        <div class="product-card">
+          <img src="images/Profile/English Novels.jpg" class="product-img">
+
+          <div class="product-info">
+            <div class="product-name">English Novels</div>
+            <div class="product-price">$29.00</div>
+
+            <div class="product-meta">
+              <div>Seller: Coofee</div>
+              <div>Purchased on: Apr 20, 2026</div>
+              <div>Status: Completed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-box">
+
+          <div class="rate-row">
+            <label>Rate Seller:</label>
+            <select>
+              <option>⭐ 1</option>
+              <option>⭐ 2</option>
+              <option>⭐ 3</option>
+              <option>⭐ 4</option>
+              <option>⭐ 5</option>
+            </select>
+          </div>
+
+          <textarea placeholder="Leave a comment..."></textarea>
+          <button class="submit-review">Submit</button>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section" id="ratings">
+
+      <h2>Ratings & Feedback</h2>
+
+      <div class="rating-overview">
+        <div class="big-rating">4.3</div>
+        <div class="stars">★★★★☆</div>
+        <div class="rating-count">Based on 15 reviews</div>
+      </div>
+
+      <div class="feedback-row">
+
+        <div class="feedback-card">
+
+          <div class="user-info">
+            <img src="images/Profile/Zaomi.png" class="user-pic">
+            <div class="user-name">Zaomi</div>
+          </div>
+
+          <div class="user-stars">★★★★★</div>
+          <p>"Good communication and the notes were in good condition. Would buy again."</p>
+
+        </div>
+
+        <div class="feedback-card">
+
+          <div class="user-info">
+            <img src="images/Profile/Chanrak.png" class="user-pic">
+            <div class="user-name">Chanrak</div>
+          </div>
+
+          <div class="user-stars">★★★★☆</div>
+          <p>"Good communication and the notes were in good condition. Would buy again."</p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section" id="saved">
+
+      <h2>Saved Items</h2>
+
+      <div class="saved-grid">
+
+        <div class="saved-card">
+
+          <div class="saved-img-box">
+            <img src="images/Profile/Color Paper.jpg" class="saved-img">
+            <span class="heart">❤</span>
+          </div>
+
+          <div class="saved-name">Color Paper</div>
+          <div class="saved-price">$3</div>
+          <div class="saved-seller">Sold by: DK</div>
+
+          <div class="saved-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="saved-card">
+
+          <div class="saved-img-box">
+            <img src="images/Profile/Kindle.jpg" class="saved-img">
+            <span class="heart">❤</span>
+          </div>
+
+          <div class="saved-name">Kindle</div>
+          <div class="saved-price">$80</div>
+          <div class="saved-seller">Sold by: Jobaii</div>
+
+          <div class="saved-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="saved-card">
+
+          <div class="saved-img-box">
+            <img src="images/Profile/HSK 4.jpg" class="saved-img">
+            <span class="heart">❤</span>
+          </div>
+
+          <div class="saved-name">HSK 4</div>
+          <div class="saved-price">$8.99</div>
+          <div class="saved-seller">Sold by: Meey</div>
+
+          <div class="saved-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer-wrapper">
+
+  <div class="footer">
+
+    <div class="footer-item">
+      <div class="footer-category">About</div>
+      <div>TW!CE is a student-only secondhand marketplace for Cambodia.</div>
+    </div>
+
+    <div class="footer-item">
+      <div class="footer-category">Quick Links</div>
+      <div>Home</div>
+      <div>Profile</div>
+      <div>Sell Items</div>
+      <div>Login & Sign up</div>
+    </div>
+
+    <div class="footer-item">
+      <div class="footer-category">Categories</div>
+      <div>Academic</div>
+      <div>Tech Gadget</div>
+    </div>
+
+    <div class="footer-item">
+      <div class="footer-category">Support</div>
+      <div>Help Center</div>
+      <div>Safety Guidelines</div>
+      <div>Privacy Policy</div>
+    </div>
+
+    <div class="footer-item">
+      <div class="footer-category">Contact Info</div>
+      <div>Phnom Penh, Cambodia</div>
+      <div>+855 123 456 789</div>
+      <div>twice@gmail.com</div>
+    </div>
+
+  </div>
+
+  <div class="rights">© 2026 TW!CE. All rights reserved.</div>
+
+</footer>
+
+<script>
+function showSection(id, element) {
+  document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
+  element.classList.add("active");
+}
+
+function showListingTab(tabId) {
+  document.querySelectorAll(".listing-box").forEach(box => box.classList.remove("active-tab"));
+  document.getElementById(tabId).classList.add("active-tab");
+
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+  event.target.classList.add("active");
+}
+
+function goHome() {
+  window.location.href = "marketplace.html";
+}
+</script>
+
+</body>
+</html>

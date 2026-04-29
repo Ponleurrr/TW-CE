@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            padding: 20px;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            margin: 5px;
+        }
+
+        #main-img {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumbnails img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 1px solid rgb(99, 37, 157);
+        }
+
+        .product-info {
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .product-page {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .price {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .comments {
+            margin-top: 20px;
+            width: 70%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 60px;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="product-page">
+            <div class="product-container">
+                <div class="gallery"><img id="main-img"></div>
+                <div class="thumbnails" id="gallery"></div>
+            </div>
+            <div class="product-info">
+                <h1 id="name"></h1>    
+                <p id="price"></p>
+                <p id="seller"></p>
+                <p id="description"></p>
+            </div>
+        </div>
+
+        <h3>Rating</h3>
+        <div id="rating">⭐⭐⭐⭐☆</div>
+
+        <div class="comments">
+            <h3>Comments</h3>
+            <textarea id="comment-input" placeholder="Write a comment..."></textarea>
+            <button onclick="addComment()">Post</button>
+            <div id="comment-list"></div>
+        </div>
+    </div>
+<!-- Product Database (few for demo) -->
+    <script>
+        const products = {
+            "laptop-bag": {
+                name: "Laptop Bag",
+                price: "7.5$",
+                seller: "Light",
+                description: `A cute, aesthetic, and durable laptop bag designed for everyday use. Made with high-quality materials, it provides reliable protection for your laptop while keeping your style on point. The interior is spacious enough to fit your laptop, charger, notebooks, and other essentials, making it perfect for school, university, or work.
+
+                With its lightweight design and comfortable handles, it’s easy to carry around all day without feeling bulky. The soft inner lining helps prevent scratches, while the sturdy exterior keeps your device safe from minor impacts. Whether you’re heading to class, a café, or traveling, this laptop bag combines functionality and aesthetic appeal effortlessly.`,
+                images: ["Laptop bag.jpg", "laptop bag(2).jpg", "laptop bag(5).jpg"]
+            }
+        };
+
+        // get ID from URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+        const product = products[id];
+
+        // safety check
+        if (!product) {
+            document.body.innerHTML = "<h2>Product not found</h2>";
+        }
+
+        // Load data 
+        document.getElementById("name").innerText = product.name;
+        document.getElementById("price").innerText = product.price;
+        document.getElementById("seller").innerText = "Sold by " + product.seller;
+        document.getElementById("description").innerText = product.description;
+        document.getElementById("main-img").src = product.images[0];
+
+        // Gallery 
+        const gallery = document.getElementById("gallery");
+        product.images.forEach(img => {
+            const image = document.createElement("img");
+            image.src = img;
+            image.onclick = () => {
+                document.getElementById("main-img").src = img;
+            };
+
+            gallery.appendChild(image);
+        });
+
+        // comments
+        function addComment() {
+            const input = document.getElementById("comment-input");
+            if (input.value.trim() === "") return;
+
+            const p = document.createElement("p");
+            p.innerText = input.value;
+            document.getElementById("comment-list").appendChild(p);
+            input.value = "";
+        }
+    </script>
+    
+</body>
+</html>

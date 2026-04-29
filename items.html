@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/items.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="images/twice_logo1.png">
+    <title>TW!CE</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo1">
+            <img src="images/twice_logo.png" alt="logo">
+        </div>
+        <div class="left">
+             <i class="fa-solid fa-circle-chevron-left"></i>
+        </div>
+        <div class="search">
+             <input type="text" placeholder="Search" class="search-bar">
+             <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+        <div class="navbar-icon-desktop">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="dropdown">
+            <i class="fa-solid fa-bars"></i>
+            <div class="content">
+                <a href="">Home</a>
+                <a href="">Profile</a>
+                <a href="">Sell Items</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="logo">
+            <img src="images/LOY9.png" alt="logo">
+        </div>
+        <div class="container">
+            <div class="shipping">
+                <h1 class="archivo-black-regular">Shipping Information</h1>
+                <form>
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" placeholder="Iam the Mew" required><br><br>
+                    <label for="number">Phone Number</label><br>
+                    <input type="text" id="number" placeholder="012 168 168" required><br><br>
+                    <label for="address">Address</label><br>
+                    <input type="text" id="address" placeholder="Khan Russei Keo, Phnom Penh" required><br><br>
+                    <label for="location">Location (*optional)</label><br>
+                    <input type="text" id="location" placeholder="https://goo.gl/maps/2Zz5mLh1n7u"><br><br>
+                    <input type="checkbox" id="save-info">
+                    <label for="save-info">Save this information for next time</label><br><br>
+                    <label for="note">Note</label><br>
+                    <textarea id="note" placeholder="Leave a note for the seller..."></textarea><br><br>
+                </form>
+            </div>
+
+            <div class="paymethod">
+                <h1 class="archivo-black-regular">Payment Method</h1>
+                <div class="banks">
+                    <div id="ace">
+                        <img id="aceleda" src="images/ACELEDA.png" alt="aceleda">
+                    </div>
+                    <div id="aba">
+                        <img id="abaa" src="images/ABA.png" alt="aba">
+                    </div>
+                    <div id="amk">
+                        <img id="amka" src="images/AMK.png" alt="amk">
+                    </div>
+                    <div id="wing">
+                        <img id="winga" src="images/WING.png" alt="wing">
+                    </div>
+                </div>
+            </div>
+       
+            <div class="order">
+                <h1 class="archivo-black-regular">Order Summary</h1>
+                <div class="item">
+                    <img class="items" src="images/Miffy Wireless Earbuds.jpg" alt="miffy">
+                    <div class="item-info">
+                        <h2>Miffy Wireless Earbuds</h2>
+                        <p style="color: hsl(0, 4%, 47%);">Sold by Smeyy</p>
+                        <p>Price: 3$</p>
+                        <p style="color: hsl(0, 90%, 40%);"><i class="fa-solid fa-trash"></i>Remove</p>
+                    </div>
+                    <hr>
+                    <img class="items" src="images/Journal book.jpg" alt="books">
+                    <div class="item-info">
+                        <h2>Journal Book</h2>
+                        <p style="color: hsl(0, 4%, 47%);">Sold by Hout</p>
+                        <p>Price: 2$</p>
+                        <p style="color: hsl(0, 90%, 40%);"><i class="fa-solid fa-trash"></i>Remove</p>
+                    </div>
+                    <hr>
+                    <img class="items" id="paperr" src="images/A4 paper.jpg" alt="paper">
+                    <div class="item-info">
+                        <h2>A4 Paper</h2>
+                        <p style="color: hsl(0, 4%, 47%);">Sold by Lyyaa</p>
+                        <p>Price: 3$</p>
+                        <p style="color: hsl(0, 90%, 40%);"><i class="fa-solid fa-trash"></i>Remove</p>
+                    </div>
+                </div>
+            </div>
+            <div class="Total">
+                <h1 class="archivo-black-regular">Order Total</h1>
+                <p>Subtotal: 8$</p>
+                <p>Shipping: 1.5$</p>
+                <hr>
+                <p style=" color: black;"><strong>Total</strong>: 9.5$</p>
+            </div>
+            <div class="button">
+              <button type="submit">Check Out <i class="fa-solid fa-arrow-right"></i></button>
+              <button type="button" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
+            </div> 
+
+        </div>  
+    </main>
+
+    
+</body>
+</html>

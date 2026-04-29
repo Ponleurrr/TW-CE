@@ -1,0 +1,359 @@
+/* ===== RESET ===== */
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* ===== LANDING SECTION (PHONE FIRST) ===== */
+.landing1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  background-color: #fbf9ff;
+}
+
+/* TEXT */
+.text-content {
+  padding: 30px 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HEADER INSIDE TEXT-CONTENT */
+.text-content .header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px; /* space between header and title */
+}
+
+.text-content .logo {
+  width: 40px; /* adjust for mobile */
+  height: auto;
+}
+
+.text-content .welcome {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 16px;
+  color: #541b76;
+}
+
+/* TITLE */
+.title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 26px;
+}
+
+.title span {
+  color: #541b76;
+}
+
+/* DESCRIPTION */
+.description {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Buttons row */
+.button-row {
+  display: flex;
+  gap: 15px;
+}
+/* BUTTONS */
+.btn {
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: white;
+  color: #541b76;
+  font-weight: bold;
+  border: 2px solid #541b76;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #541b76;
+  color: white;
+}
+
+/* SIGNUP BUTTON */
+.btn-primary {
+  background-color: #541b76;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #541b76;
+}
+
+/* BUTTON ROW */
+.button-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* CONTAINER */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BROWSE LINK (not a button) */
+.browse-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #541b76;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.browse-link:hover {
+  opacity: 0.7;
+}
+
+/* Browse link */
+.browse-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #541b76;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.browse-link:hover {
+  opacity: 0.7;
+}
+
+/* IMAGE */
+.image-side img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== SECOND SECTION ===== */
+.landing2 {
+  height: 90vh;
+  background-image: url("images/landing-page/bg2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;     
+}
+
+.vertical-title {
+  font-family: "Bungee", sans-serif;
+  font-size: 57px;
+  color: #541b76;
+  letter-spacing: 7px;
+  line-height: 1.5;
+  word-spacing: 20px;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  height: 100vh;              /* 👈 FULL SCREEN HEIGHT */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 10px; 
+  margin: 20px 10px;
+}
+
+.outline {
+  font-family: "Bungee Outline", sans-serif;
+}
+
+.card {
+  position: relative;
+  background-color: #d6c8f3; /* light purple */
+  padding: 40px 60px;
+  width: 500px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: 60px;
+}
+
+.content h2 {
+  color: #541b76;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: white;
+}
+
+/* ===== THIRD SECTION ===== */
+.landing3 {
+  background-color: #7442d7;
+  min-height: 90vh;
+}
+
+.landing4 {
+  background-color: #fbf9ff;
+  min-height: 70vh;
+
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+}
+
+/* This is the key */
+.text-box {
+  text-align: left;   /* 👈 text stays left-aligned */
+}
+
+/* Your existing styles */
+.title4 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 47px;
+  line-height: 1.6;
+}
+
+.small-title4 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 22px;
+}
+
+.mode4 {
+  font-family: "Bungee", sans-serif;
+  font-size: 285px;
+  color: #541b76;
+}
+
+        .footer-wrapper {
+            background-color: #79508f; /* your theme color */
+            padding: 40px;
+        }
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a a a"
+                "b c d"
+                "e e e";
+            gap: 20px;
+           
+        }
+        
+        .footer-category {
+            font-family: "Archivo Black", sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-item {
+            color: white;
+            font-size: 12px;
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Assign areas */
+        .footer-item:nth-child(1) { grid-area: a; }
+        .footer-item:nth-child(2) { grid-area: b; }
+        .footer-item:nth-child(3) { grid-area: c; }
+        .footer-item:nth-child(4) { grid-area: d; }
+        .footer-item:nth-child(5) { grid-area: e; }
+
+        .rights {
+            font-family: "Quicksand", sans-serif;
+            font-size: 15.4px;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+
+
+
+/* ========================= */
+/* 📱 TABLET */
+@media (min-width: 768px) {
+
+  .landing1 {
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+  }
+
+  .text-content {
+    text-align: left;
+    padding: 40px;
+  }
+
+  .text-content .logo {
+    width: 50px;
+  }
+  .text-content .welcome {
+    font-size: 18px;
+  }
+
+  .button-container {
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: fit-content;
+  }
+
+  .image-side img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+/* ========================= */
+/* 💻 LAPTOP */
+@media (min-width: 1024px) {
+
+  .text-content {
+    padding: 80px;
+  }
+
+  .text-content .logo {
+    width: 60px;
+  }
+  .text-content .welcome {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .image-side img {
+    object-position: center;
+  }
+
+  .footer {
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    grid-template-areas: "a b c d e"; /* reset grid areas */
+  }
+}

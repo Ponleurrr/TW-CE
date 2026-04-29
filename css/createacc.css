@@ -1,0 +1,153 @@
+body{
+    background-image: url("images/whitepurple.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.navbar i {
+    margin-top: 10px;
+    color: #541b76;
+    font-size: 28px;
+}
+
+.navbar-icon-desktop {
+    display: none;
+}
+
+
+.dropdown a {
+    display: block;
+    color:#872b87;
+    text-decoration: none;
+    padding: 10px 15px;
+    
+
+}
+
+.dropdown .content {
+    display: none;
+    position: absolute;
+    right: -5px;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-right: 10px;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+img {
+    width: 90px; 
+    height: auto;
+    /* margin-top: 55px;
+    margin-left: 152px; */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #541b76;
+    font-size: 26px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    border: 1px solid rgba(204, 204, 204, 0.4);
+    background-color: rgba(204, 204, 204, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 240px;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: #872b87;
+    overflow: hidden;
+
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+    width: 220px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+}
+
+button {
+    float: right;
+    padding: 10px 20px;
+    background-color: #541b76;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #872b87;
+}
+
+.fa-circle-chevron-left:hover {
+    color: #6f246f;
+}
+.fa-bars:hover {
+    color: #6f246f;
+}
+
+@media screen and (min-width: 768px) {
+
+    body {
+        background: url('images/whitepurple.jpg') no-repeat center center;
+        background-size: cover;
+        margin: 0;
+        height: 100vh; 
+    }
+    .navbar {
+        padding: 20px 34px;
+    }
+    .navbar i {
+        font-size: 32px;
+    }
+
+    .navbar-icon-desktop {
+        display: block; 
+    }
+
+    .navbar-icon-desktop i{
+        margin-left: 20px;
+    }
+    .navbar-icon-desktop:hover i {
+        color: #6f246f;
+    }
+
+    .dropdown {
+        display: none;
+    }
+    form {
+        width: 440px;
+        margin: 0 auto;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto;
+    }
+}

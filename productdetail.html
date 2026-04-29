@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - TWICE</title>
+    <link rel="icon" type="image/png" href="images/twice_logo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/product_details.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons(); </script>
+          
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="flex items-center gap-3">
+                <img src="images/twice_logo.png" alt="TW!CE Logo" class="w-16 h-16 object-contain">
+            </div>
+
+            <div class="search-wrapper">
+                <div class="search-bar-input">
+                    <input type="text" placeholder="Search" style="color: #9c82b0;font-family: Quicksand;">
+                    <i data-lucide="search" class="search-icon-custom icon-color"></i>
+                </div>
+                <button class="filter-btn">
+                    <i data-lucide="funnel" class="icon-color"></i>
+                </button>
+            </div>
+
+            <div class="icon-group">
+                <i data-lucide="shopping-cart" class="icon-color"></i>
+                <i data-lucide="circle-user-round" class="icon-color"></i>
+            </div>
+            <script>lucide.createIcons(); </script>
+        </div>
+    </nav>
+    
+    <div class="product-section">
+        <div class="product-container quicksand">
+            <div class="container1">
+                <div class="product-gallery">
+                    <div class="thumbnail-list">
+                        <div class="thumb-box active">
+                            <img src="Khmer Novel.png" alt="Product 1">
+                            <div class="eye-overlay"><i class="fa fa-eye"></i></div>
+                        </div>
+                        
+                        <div class="thumb-box">
+                            <img src="PD2.PNG" alt="Product 2">
+                            <div class="eye-overlay"><i class="fa fa-eye"></i></div>
+                        </div>
+
+                        <div class="thumb-box">
+                            <img src="PD3.jpg" alt="Product 3">
+                            <div class="eye-overlay"><i class="fa fa-eye"></i></div>
+                        </div>
+
+                        <div class="thumb-box">
+                            <img src="PD4.jpg" alt="Product 4">
+                            <div class="eye-overlay"><i class="fa fa-eye"></i></div>
+                        </div>
+                    </div>
+                    <div class="main-image-viewer">
+                        <button class="nav-arrow left-btn"><i class="fa fa-chevron-left"></i></button>
+                        <img src="Khmer Novel.png" id="current-main-img" alt="Main View">
+                        <button class="favorite-btn"><i data-lucide="heart" class="icon-color"></i></button>
+                        <script>lucide.createIcons(); </script>
+                        <button class="nav-arrow right-btn"><i class="fa fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="product-details">
+                    <div class="header-row">
+                        <div class="meta-row">
+                            <span class="category-badge">Academic</span>
+                            <div class="location">
+                                <i class="fa fa-location-dot"></i> <span>Russey Keo, Phnom Penh</span>
+                            </div>
+                        </div>
+                        <div class="seller-meta-top">
+                            <span>Sold by Daniel</span>
+                            <div class="mini-rating">
+                                <i class="fa fa-star"></i> 4.0
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="title-wishlist-row">
+                        <h1 class="product-title-large archivo-black-regular">Khmer Novels</h1>
+                        <button class="wishlist-btn-large"><i class="fa fa-heart-o"></i></button>
+                    </div>
+                    
+                    <p class="product-price-large archivo-black-regular">$2.00</p>
+                    <hr class="divider-line">
+
+                    <div class="info-block">
+                        <p class="condition-text"><strong>Condition:</strong> Used - Good</p> 
+                        <h3 class="description-title"><strong>Description</strong></h3>
+                        <p class="description-text">
+                            All the books are in good condition. The pages are clean with no writing or highlights. 
+                            The cover shows slight signs of wear from normal use, but there are no major damages such as 
+                            tears or missing pages. The book has been well taken care of and is perfect for reading and studying.
+                        </p>
+                        <hr class="divider-line">
+                    </div>
+
+                    <div class="product-actions-large">
+                        <button class="btn-buy-large">Buy Now</button>
+                        <button class="btn-cart-large">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+        
+        
+
+    <section class="customer-review-section quicksand">
+        <h2 class="section-title archivo-black-regular">Customer Review</h2>
+
+        <div class="reviews-summary-flex">
+            <div class="rating-bars-container">
+                <div class="box1">
+                    <div class="rating-row">
+                        <span class="rating-label">Five</span>
+                        <i class="fa fa-star star-icon"></i>
+                        <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                        <span class="count-num">16</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Four</span>
+                        <i class="fa fa-star star-icon"></i>
+                        <div class="progress-track"><div class="progress-fill" style="width: 70%;"></div></div>
+                        <span class="count-num">10</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Three</span>
+                        <i class="fa fa-star star-icon"></i>
+                        <div class="progress-track"><div class="progress-fill" style="width: 60%;"></div></div>
+                        <span class="count-num">6</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Two</span>
+                        <i class="fa fa-star star-icon"></i>
+                        <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+                        <span class="count-num">0</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">One</span>
+                        <i class="fa fa-star star-icon"></i>
+                        <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+                        <span class="count-num">0</span>
+                    </div>
+                </div>
+                     
+                <div class="box2">
+                    <div class="review-summary-card">
+                        <h1 class="big-score-display">4.3</h1>
+                        <div class="rating-stars-row">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="total-ratings-text">32 Ratings</p>
+                    </div>
+                </div>
+                    
+                
+            </div>
+
+           
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-info">
+                        <img src="The Boyz.png" alt="User" class="user-avatar-img">
+                        <span class="user-name">The Boyz</span>
+                    </div>
+                    <div class="card-rating">
+                        <i class="fa fa-star star-icon"></i>
+                        <span class="score-val">4.8</span>
+                    </div>
+                </div>
+                <p class="review-text">"Great seller! The book was exactly as described and arrived quickly. Very helpful and friendly."</p>
+                <div class="review-footer">
+                    <span class="review-date">Apirl 22, 2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-info">
+                        <img src="Grabrela.png" alt="User" class="user-avatar-img">
+                        <span class="user-name">Grabrela</span>
+                    </div>
+                    <div class="card-rating">
+                        <i class="fa fa-star star-icon"></i>
+                        <span class="score-val">4.5</span>
+                    </div>
+                </div>
+                <p class="review-text">"Good communication and the notes were in good condition. Would buy from this seller again."</p>
+                <div class="review-footer">
+                    <span class="review-date">April 16, 2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-info">
+                        <img src="Maria.png" alt="User" class="user-avatar-img">
+                        <span class="user-name">Maria</span>
+                    </div>
+                    <div class="card-rating">
+                        <i class="fa fa-star star-icon"></i>
+                        <span class="score-val">4.6</span>
+                    </div>
+                </div>
+                <p class="review-text">"Fast response and reliable. The calculator I bought worked perfectly. Highly recommend!"</p>
+                <div class="review-footer">
+                    <span class="review-date">April 10, 2025</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-info">
+                        <img src="Ron Min.png" alt="User" class="user-avatar-img">
+                        <span class="user-name">Ron Min</span>
+                    </div>
+                    <div class="card-rating">
+                        <i class="fa fa-star star-icon"></i>
+                        <span class="score-val">4.8</span>
+                    </div>
+                </div>
+                <p class="review-text">"Item matched the description. Slight wear on the cover, but overall very satisfied with the purchase."</p>
+                <div class="review-footer">
+                    <span class="review-date">March 27, 2025</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="see-more-container quicksand">
+            <a href="#" class="see-more-btn">See More</a>
+        </div>
+    </section>
+
+    <section class="recommendation">
+        <h2 class="section-title archivo-black-regular">You Might Also Like</h2>
+
+        <div class="product-grid quicksand">
+            
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Khmer Dictionary.png" alt="Khmer Dictionary" class="product-image">
+                    <button class="wishlist-btn"><i data-lucide="heart" class="icon-color"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="title-price-row">
+                        <h3 class="product-title archivo-black-regular">Khmer Dictionary</h3>
+                        <span class="product-price archivo-black-regular">$3</span>
+                    </div>
+                    <div class="seller-rating-row">
+                        <span class="seller-name">Sold by NAma</span>
+                        <div class="mini-rating"><i class="fa fa-star star-icon"></i> 4.3</div>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy">Buy Now</button>
+                    <button class="btn-cart">Add To Cart</button>
+                </div>
+                <script>lucide.createIcons(); </script>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Children Book.jpg" alt="Children Book" class="product-image">
+                    <button class="wishlist-btn"><i data-lucide="heart" class="icon-color"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="title-price-row">
+                        <h3 class="product-title archivo-black-regular">Children Book</h3>
+                        <span class="product-price archivo-black-regular">$2</span>
+                    </div>
+                    <div class="seller-rating-row">
+                        <span class="seller-name">Sold by Roma</span>
+                        <div class="mini-rating"><i class="fa fa-star star-icon"></i> 4.9</div>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy">Buy Now</button>
+                    <button class="btn-cart">Add To Cart</button>
+                </div>
+                <script>lucide.createIcons(); </script>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Folktale.jpg" alt="Folktale" class="product-image">
+                    <button class="wishlist-btn"><i data-lucide="heart" class="icon-color"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="title-price-row">
+                        <h3 class="product-title archivo-black-regular">Folktale</h3>
+                        <span class="product-price archivo-black-regular">$1</span>
+                    </div>
+                    <div class="seller-rating-row">
+                        <span class="seller-name">Sold by Hannii</span>
+                        <div class="mini-rating"><i class="fa fa-star star-icon"></i> 4.2</div>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy">Buy Now</button>
+                    <button class="btn-cart">Add To Cart</button>
+                </div>
+                <script>lucide.createIcons(); </script>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Novels.jpg" alt="Novels" class="product-image">
+                    <button class="wishlist-btn"><i data-lucide="heart" class="icon-color"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="title-price-row">
+                        <h3 class="product-title archivo-black-regular">Novels</h3>
+                        <span class="product-price archivo-black-regular">$6</span>
+                    </div>
+                    <div class="seller-rating-row">
+                        <span class="seller-name">Sold by Veha</span>
+                        <div class="mini-rating"><i class="fa fa-star star-icon"></i> 4.4</div>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy">Buy Now</button>
+                    <button class="btn-cart">Add To Cart</button>
+                </div>
+                <script>lucide.createIcons(); </script>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="Storybooks.webp" alt="Storybooks" class="product-image">
+                    <button class="wishlist-btn"><i data-lucide="heart" class="icon-color"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="title-price-row">
+                        <h3 class="product-title archivo-black-regular">Storybooks</h3>
+                        <span class="product-price archivo-black-regular">$2</span>
+                    </div>
+                    <div class="seller-rating-row">
+                        <span class="seller-name">Sold by Neary</span>
+                        <div class="mini-rating"><i class="fa fa-star star-icon"></i> 4.6</div>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy">Buy Now</button>
+                    <button class="btn-cart">Add To Cart</button>
+                </div>
+                <script>lucide.createIcons(); </script>
+            </div>
+        </div>
+        <div class="see-more-container2 quicksand
+        ">
+            <a href="#" class="see-more-btn">See More</a>
+        </div> 
+    </section>
+    <script src="js/productdetail.js"></script>
+
+
+</body>
+</html>

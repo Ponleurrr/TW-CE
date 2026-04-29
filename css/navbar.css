@@ -1,0 +1,121 @@
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #fbf9ff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== LOGO ===== */
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+/* ===== NAV RIGHT SIDE ===== */
+.nav-desktop {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    padding: 6px 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+}
+
+.search-bar i {
+    color: #541b76;
+    font-size: 14px;
+}
+
+/* ===== ICONS ===== */
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.nav-icons i {
+    font-size: 20px;
+    color: #541b76;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-icons i:hover {
+    transform: scale(1.15);
+}
+
+/* ===== HAMBURGER MENU (MOBILE) ===== */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #541b76;
+    cursor: pointer;
+    position: relative;
+}
+
+/* DROPDOWN */
+.menu-icon .content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 35px;
+    background: white;
+    min-width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.menu-icon .content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #541b76;
+    font-size: 14px;
+}
+
+.menu-icon .content a:hover {
+    background: #f3ebfa;
+}
+
+/* SHOW DROPDOWN */
+.menu-icon:hover .content {
+    display: block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    /* hide desktop layout */
+    .nav-desktop {
+        display: none;
+    }
+
+    /* show hamburger */
+    .menu-icon {
+        display: block;
+    }
+}

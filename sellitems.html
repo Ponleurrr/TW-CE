@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sellitems.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="images/twice_logo1.png">
+    <title>TW!CE-sellitems</title>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/twice_logo.png" alt="TWICE Logo">
+        </div>
+        
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+            <div class="content">
+                <a href="">Home</a>
+                <a href="">Profile</a>
+                <a href="">Sell Items</a>
+            </div>
+        </div>
+        
+        <div class="nav-desktop">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="nav-icons">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container">
+        <h1 class="page-title">What Do You Want to Sell Today?</h1>
+        
+        <div class="content-wrapper">
+            <!-- Left Side - Upload Photos -->
+            <div class="upload-section">
+                <h2>Upload Photos</h2>
+                
+                <div class="upload-box">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Drag & Drop your files or <span class="browse-link">Browse</span></p>
+                    <p class="max-size">Maximum size: 15MB</p>
+                </div>
+                
+                <!-- Uploaded Files -->
+                <div class="uploaded-files">
+                    <div class="file-item">
+                        <i class="fa-solid fa-image"></i>
+                        <div class="file-info">
+                            <p class="file-name">book_image.png</p>
+                            <p class="file-size">12MB</p>
+                        </div>
+                        <button class="remove-btn">
+                            <i class="fa-solid fa-xmark"></i> Remove
+                        </button>
+                    </div>
+                    
+                    <div class="file-item">
+                        <i class="fa-solid fa-image"></i>
+                        <div class="file-info">
+                            <p class="file-name">book_image.png</p>
+                            <p class="file-size">12MB</p>
+                        </div>
+                        <button class="remove-btn">
+                            <i class="fa-solid fa-xmark"></i> Remove
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="upload-btn">Upload</button>
+            </div>
+            
+            <!-- Right Side - Item Details Form -->
+            <div class="details-section">
+                <div class="form-group">
+                    <label>Categories</label>
+                    <div class="category-tags">
+                        <span class="tag">Academic</span>
+                        <span class="tag active">Tech & Gadget</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Enter item name">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="price">Price</label>
+                        <input type="text" id="price" placeholder="Enter price">
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="Enter your location">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="condition">Condition</label>
+                    <input type="text" id="condition" placeholder="Item condition">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contract">Contract</label>
+                    <input type="text" id="contract" placeholder="Enter your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" placeholder="Describe the item..."></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I confirm that the item details are accurate and agree to the platform's terms and selling guidelines.</label>
+                </div>
+                
+                <div class="form-actions">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="post-btn">Post</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
