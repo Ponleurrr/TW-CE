@@ -328,11 +328,7 @@ function getMode() {
         currentFilters.price !== null ||
         currentFilters.condition !== null;
 
-    const hasSub =
-        window.currentSubcategory &&
-        window.currentSubcategory !== "all";
-
-    if (hasSearch && (hasFilter || hasSub)) return "both";
+    if (hasSearch && hasFilter) return "both";
     if (hasSearch) return "search";
     if (hasFilter || hasSub) return "filter";
 
