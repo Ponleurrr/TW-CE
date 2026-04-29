@@ -10,6 +10,7 @@ let currentFilters = {
     price: null,
     condition: null
 };
+let currentSubcategory = null;
 
 function getFilteredProducts() {
     let filtered = [...products];
@@ -23,9 +24,9 @@ function getFilteredProducts() {
     }
 
     // 2. subcategory filter (ONLY ONCE)
-    if (window.currentSubcategory && window.currentSubcategory !== "all") {
+    if (currentSubcategory && currentSubcategory !== "all") {
         filtered = filtered.filter(
-            p => p.subcategory === window.currentSubcategory
+            p => p.subcategory === currentSubcategory
         );
     }
 
@@ -305,12 +306,16 @@ function showResults(list) {
 
     const mode = getMode();
 
-    if (mode === "search") {
+    if (currentSubcategory && mode === "all") {
+        title.textContent = currentSubcategory.toUpperCase();
+    } else if (mode === "search") {
         title.textContent = "Search Results";
-    } else if (mode === "filter") {
-        title.textContent = "Filter Results";
     } else if (mode === "both") {
         title.textContent = "Search & Filter Results";
+    } else if (mode === "subcategory") {
+        title.textContent =
+            currentSubcategory.charAt(0).toUpperCase() +
+            currentSubcategory.slice(1);
     } else {
         title.textContent = "All Products";
     }
@@ -322,19 +327,44 @@ function getMode() {
     const hasSearch = currentKeyword?.trim().length > 0;
 
     const hasFilter =
-        currentFilters.price !== null ||
-        currentFilters.condition !== null;
+        (currentFilters.price === "high" || currentFilters.price === "low") ||
+        (currentFilters.condition === "new" || currentFilters.condition === "used");
 
-    const hasSub =
-        window.currentSubcategory &&
-        window.currentSubcategory !== "all";
+    const hasSubcategory =
+        currentSubcategory !== null && currentSubcategory !== "all";
 
-    if (hasSearch && (hasFilter || hasSub)) return "both";
+    if (hasSearch && hasFilter) return "both";
     if (hasSearch) return "search";
-    if (hasFilter || hasSub) return "filter";
+    if (hasSubcategory) return "subcategory";
+    if (hasFilter) return "filter";
 
     return "all";
 }
+
+function filterSubcategory(subcategory) {
+    currentSubcategory = subcategory;
+
+    // reset EVERYTHING cleanly
+    currentKeyword = "";
+
+    currentFilters = {
+        price: null,
+        condition: null
+    };
+
+    document.querySelectorAll('input[name="price"]').forEach(r => {
+        r.checked = false;
+        r.value = ""; // force clear state
+    });
+
+    document.querySelectorAll('input[name="condition"]').forEach(r => {
+        r.checked = false;
+        r.value = "";
+    });
+
+    applyAll();
+}
+
 
 
 

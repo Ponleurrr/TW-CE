@@ -2,7 +2,6 @@ body{
     background-image: url("images/login-signup/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
 
 .navbar{
@@ -149,5 +148,43 @@ button:hover {
         width: 100%;
         max-width: 400px;
         margin: 10px auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-size: cover;
+    }
+    
+    .navbar {
+        padding: 25px 50px;
+    }
+    
+    .navbar i {
+        font-size: 36px;
+    }
+    
+    .logo img {
+        width: 110px;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    form {
+        width: 500px;
+        padding: 30px;
+    }
+    
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+        width: 100%;
+        max-width: 440px;
+        padding: 12px;
+    }
+    
+    button {
+        padding: 12px 30px;
+        font-size: 16px;
     }
 }
