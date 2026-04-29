@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/marketplace.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
     
@@ -64,6 +66,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="nav-icons">
+
+                <!-- cart and profile icon -->
+                <a href="items.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a> 
+                <a href="profile.html">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+
+            </div>
+
         </div>
         
 
@@ -77,6 +92,16 @@
         </div>
     </div>
 
+    <!-- footer -->
+
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+    </script>
     <script>
     let index = 0;
     const track = document.getElementById("track");
