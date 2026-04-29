@@ -4,7 +4,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-/* ===== LANDING SECTION (PHONE FIRST) ===== */
+/* ===== LANDING 1 ===== */
 .landing1 {
   display: grid;
   grid-template-columns: 1fr;
@@ -12,7 +12,6 @@ body {
   background-color: #fbf9ff;
 }
 
-/* TEXT */
 .text-content {
   padding: 30px 20px;
   text-align: center;
@@ -22,17 +21,16 @@ body {
   justify-content: center;
 }
 
-/* HEADER INSIDE TEXT-CONTENT */
+/* HEADER */
 .text-content .header {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px; /* space between header and title */
+  margin-bottom: 20px;
 }
 
 .text-content .logo {
-  width: 40px; /* adjust for mobile */
-  height: auto;
+  width: 40px;
 }
 
 .text-content .welcome {
@@ -58,19 +56,18 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
+/* BUTTONS */
 .button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Buttons row */
 .button-row {
   display: flex;
   gap: 15px;
 }
-/* BUTTONS */
+
 .btn {
   padding: 12px 25px;
   border-radius: 10px;
@@ -87,7 +84,6 @@ body {
   color: white;
 }
 
-/* SIGNUP BUTTON */
 .btn-primary {
   background-color: #541b76;
   color: white;
@@ -98,36 +94,6 @@ body {
   color: #541b76;
 }
 
-/* BUTTON ROW */
-.button-row {
-  display: flex;
-  gap: 15px;
-}
-
-/* CONTAINER */
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* BROWSE LINK (not a button) */
-.browse-link {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #541b76;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.browse-link:hover {
-  opacity: 0.7;
-}
-
-/* Browse link */
 .browse-link {
   margin-top: 10px;
   font-size: 14px;
@@ -148,19 +114,29 @@ body {
   display: block;
 }
 
-/* ===== SECOND SECTION ===== */
+/* ===== LANDING 2 ===== */
 .landing2 {
-  height: 90vh;
-  background-image: url("images/landing-page/bg2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 90vh;
+  width: 100%;
+  background: url("images/landing-page/bg2.png") center/cover no-repeat;
 
   display: flex;
-  align-items: center;     
+  flex-direction: row;
+  align-items: center;
+
+  overflow: hidden;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.vertical-title {
+.landing2 * {
+  box-sizing: border-box;
+}
+
+
+
+/* everything scoped inside landing2 */
+.landing2 .vertical-title {
   font-family: "Bungee", sans-serif;
   font-size: 57px;
   color: #541b76;
@@ -171,60 +147,184 @@ body {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 
-  height: 100vh;              /* 👈 FULL SCREEN HEIGHT */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding-left: 10px; 
+  padding-left: 10px;
   margin: 20px 10px;
 }
 
-.outline {
+.landing2 .outline {
   font-family: "Bungee Outline", sans-serif;
 }
 
-.card {
-  position: relative;
-  background-color: #d6c8f3; /* light purple */
-  padding: 40px 60px;
-  width: 500px;
-  border-radius: 6px;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: 60px;
+.landing2 .features-component {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 10px;
 }
 
-.content h2 {
-  color: #541b76;
-  margin-bottom: 10px;
-}
-
-.content p {
+.landing2 .feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  max-width: 700px;
+  padding: 0px 30px;
   color: white;
+  box-sizing: border-box;
 }
 
-/* ===== THIRD SECTION ===== */
-.landing3 {
-  background-color: #7442d7;
-  min-height: 90vh;
+/* Colors */
+.landing2 .item-1 { background-color: #c4bcd4; }
+.landing2 .item-2 { background-color: #a499b8; }
+.landing2 .item-3 { background-color: #726284; }
+.landing2 .item-4 { background-color: #42315a; }
+
+/* Stagger effect */
+.landing2 .indent {
+  align-self: flex-end;
 }
 
+/* Text */
+.landing2 .feature-text {
+  flex: 3;
+}
+
+.landing2 .feature-text h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.8rem;
+}
+
+.landing2 .feature-text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Number */
+.landing2 .feature-num {
+  flex: 1;
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* spacing adjustments */
+.landing2 .item-1 .feature-num,
+.landing2 .item-3 .feature-num {
+  margin-left: 20px;
+}
+
+.landing2 .item-2 .feature-num,
+.landing2 .item-4 .feature-num {
+  margin-right: 20px;
+}
+
+.landing2 .features-component {
+  flex: 2;
+}
+
+.landing2 .vertical-title {
+  flex: 0;
+}
+
+.landing2-image {
+  flex: 1.5; /* or even 2 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing2-image img {
+  width: 100%;
+  height: auto;
+  max-height: none; /* remove the cap */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .landing2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* vertical title becomes normal horizontal text */
+  .landing2 .vertical-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    height: auto;
+    font-size: 57px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  /* features become full width */
+  .landing2 .features-component {
+    width: 100%;
+    flex: none;
+  }
+
+  /* cards layout change */
+  .landing2 .feature-item {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  /* optional: keep indent effect but softer */
+  .landing2 .indent {
+    align-self: center;
+  }
+
+  /* image goes BELOW everything */
+  .landing2-image {
+    width: 100%;
+    flex: none;
+    margin-top: 20px;
+  }
+
+  .landing2-image img {
+    width: 80%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== LANDING 4 ===== */
 .landing4 {
   background-color: #fbf9ff;
-  min-height: 70vh;
+  min-height: 90vh;
 
   display: flex;
-  justify-content: center;  /* center horizontally */
-  align-items: center;      /* center vertically */
+  justify-content: center;
+  align-items: center;
+
+  position: relative; /* IMPORTANT for absolute positioning */
 }
 
-/* This is the key */
 .text-box {
-  text-align: left;   /* 👈 text stays left-aligned */
+  text-align: left;
 }
 
-/* Your existing styles */
 .title4 {
   font-family: "Archivo Black", sans-serif;
   font-size: 47px;
@@ -232,67 +332,108 @@ body {
 }
 
 .small-title4 {
-  font-family: "Quicksand", sans-serif;
   font-size: 22px;
 }
 
-.mode4 {
-  font-family: "Bungee", sans-serif;
+.mode4-left {
+  font-family: "Archivo Black", sans-serif;
   font-size: 285px;
   color: #541b76;
+
+  position: absolute;
+  top: 100px;
+  left: 100px;
 }
 
-        .footer-wrapper {
-            background-color: #79508f; /* your theme color */
-            padding: 40px;
-        }
-        .footer {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-areas:
-                "a a a"
-                "b c d"
-                "e e e";
-            gap: 20px;
-           
-        }
-        
-        .footer-category {
-            font-family: "Archivo Black", sans-serif;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .footer-item {
-            color: white;
-            font-size: 12px;
-            font-family: "Quicksand", sans-serif;
-            line-height: 1.6;
-        }
-        
-        /* Assign areas */
-        .footer-item:nth-child(1) { grid-area: a; }
-        .footer-item:nth-child(2) { grid-area: b; }
-        .footer-item:nth-child(3) { grid-area: c; }
-        .footer-item:nth-child(4) { grid-area: d; }
-        .footer-item:nth-child(5) { grid-area: e; }
+.mode4-right {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 285px;
+  color: #541b76;
 
-        .rights {
-            font-family: "Quicksand", sans-serif;
-            font-size: 15.4px;
-            color: white;
-            text-align: center;
-            margin-top: 50px;
-        }
+  position: absolute;
+  bottom: -50px;
+  right: 100px;
+}
+
+
+@media (max-width: 768px) {
+  .mode4-left,
+  .mode4-right {
+    font-size: 140px; /* shrink quotes */
+  }
+
+  .mode4-left {
+    top: 150px;
+    left: 10px;
+  }
+
+  .mode4-right {
+    bottom: 110px; /* reduce overflow */
+    right: 10px;
+  }
+
+  .text-box {
+    
+    padding: 0 20px;
+  }
+
+  .title4 {
+    font-size: 32px; /* scale text */
+  }
+
+  .small-title4 {
+    font-size: 18px;
+  }
+}
 
 
 
+/* ===== FOOTER ===== */
+.footer-wrapper {
+  background-color: #79508f;
+  padding: 40px;
+}
 
-/* ========================= */
-/* 📱 TABLET */
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "a a a"
+    "b c d"
+    "e e e";
+  gap: 20px;
+}
+
+.footer-category {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-item {
+  color: white;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-item:nth-child(1) { grid-area: a; }
+.footer-item:nth-child(2) { grid-area: b; }
+.footer-item:nth-child(3) { grid-area: c; }
+.footer-item:nth-child(4) { grid-area: d; }
+.footer-item:nth-child(5) { grid-area: e; }
+
+.rights {
+  font-size: 15.4px;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* ===== TABLET ===== */
 @media (min-width: 768px) {
-
   .landing1 {
     grid-template-columns: 1fr 1fr;
     min-height: 90vh;
@@ -306,6 +447,7 @@ body {
   .text-content .logo {
     width: 50px;
   }
+
   .text-content .welcome {
     font-size: 18px;
   }
@@ -321,14 +463,11 @@ body {
   .image-side img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
   }
 }
 
-/* ========================= */
-/* 💻 LAPTOP */
+/* ===== LAPTOP ===== */
 @media (min-width: 1024px) {
-
   .text-content {
     padding: 80px;
   }
@@ -336,6 +475,7 @@ body {
   .text-content .logo {
     width: 60px;
   }
+
   .text-content .welcome {
     font-size: 20px;
   }
@@ -354,6 +494,6 @@ body {
 
   .footer {
     grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
-    grid-template-areas: "a b c d e"; /* reset grid areas */
+    grid-template-areas: "a b c d e";
   }
 }
