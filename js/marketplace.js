@@ -330,7 +330,7 @@ function getMode() {
 
     if (hasSearch && hasFilter) return "both";
     if (hasSearch) return "search";
-    if (hasFilter || hasSub) return "filter";
+    if (hasFilter) return "filter";
 
     return "all";
 }
