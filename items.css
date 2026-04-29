@@ -77,9 +77,14 @@ body{
     color: #6f246f;
 }
 
-main {
-    margin-left:;
+.navbar .fa-cart-shopping {
+    color: #6f246f;
 }
+
+.navbar .fa-cart-shopping:hover {
+    color: #541b76;
+}
+
 
 img {
     width: 100px; 
@@ -266,9 +271,15 @@ button:hover {
           
     }
 
+    .navbar-icon-desktop i {
+        font-size: 28px;
+        color: #541b76;
+    }
+
     .navbar-icon-desktop i:hover {
         color: #6f246f;
     }
+
 
     .left {
         display: none;
