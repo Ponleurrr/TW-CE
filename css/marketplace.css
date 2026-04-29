@@ -621,3 +621,38 @@
         * {
             box-sizing: border-box;
         }
+
+    /* icons */
+        @media (max-width: 768px) {
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .nav-icons i {
+            font-size: 18px;
+        }
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 20px;
+        }
+
+        .nav-icons i {
+            font-size: 20px;
+            color: #541b76;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-icons i:hover {
+            transform: scale(1.15);
+        }
+
+        .nav-icons a {
+            padding: 8px;
+            display: inline-block;
+        }

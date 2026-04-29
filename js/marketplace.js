@@ -10,7 +10,7 @@ let currentFilters = {
     price: null,
     condition: null
 };
-let currentSubcategory = null;
+let currentSubcategory = "all";
 
 function getFilteredProducts() {
     let filtered = [...products];
@@ -297,45 +297,42 @@ function showResults(list) {
     const section = document.getElementById("resultsSection");
     const title = document.getElementById("resultsTitle");
 
+    const mode = getMode();
+
+    if (currentSubcategory && mode === "subcategory") {
+        title.textContent =
+            currentSubcategory.charAt(0).toUpperCase() +
+            currentSubcategory.slice(1) + " Products";
+    } else if (mode === "search") {
+        title.textContent = "Search Results";
+    } else if (mode === "both") {
+        title.textContent = "Search & Filter Results";
+    } else if (mode === "filter") {
+        title.textContent = "Filter Results";
+    } else {
+        title.textContent = "All Products";
+    }
+
     if (!list.length) {
         section.style.display = "none";
         return;
     }
 
     section.style.display = "block";
-
-    const mode = getMode();
-
-    if (currentSubcategory && mode === "all") {
-        title.textContent = currentSubcategory.toUpperCase();
-    } else if (mode === "search") {
-        title.textContent = "Search Results";
-    } else if (mode === "both") {
-        title.textContent = "Search & Filter Results";
-    } else if (mode === "subcategory") {
-        title.textContent =
-            currentSubcategory.charAt(0).toUpperCase() +
-            currentSubcategory.slice(1);
-    } else {
-        title.textContent = "All Products";
-    }
-
     renderProducts(list, "resultsContainer");
 }
 
 function getMode() {
-    const hasSearch = currentKeyword?.trim().length > 0;
-
-    const hasFilter =
-        (currentFilters.price === "high" || currentFilters.price === "low") ||
-        (currentFilters.condition === "new" || currentFilters.condition === "used");
-
     const hasSubcategory =
-        currentSubcategory !== null && currentSubcategory !== "all";
+        currentSubcategory && currentSubcategory !== "all";
+    const hasSearch = currentKeyword?.trim().length > 0;
+    const hasFilter =
+        currentFilters.price !== null ||
+        currentFilters.condition !== null;
 
+    if (hasSubcategory && !hasSearch && !hasFilter) return "subcategory";
     if (hasSearch && hasFilter) return "both";
     if (hasSearch) return "search";
-    if (hasSubcategory) return "subcategory";
     if (hasFilter) return "filter";
 
     return "all";
@@ -354,12 +351,10 @@ function filterSubcategory(subcategory) {
 
     document.querySelectorAll('input[name="price"]').forEach(r => {
         r.checked = false;
-        r.value = ""; // force clear state
     });
 
     document.querySelectorAll('input[name="condition"]').forEach(r => {
         r.checked = false;
-        r.value = "";
     });
 
     applyAll();
