@@ -1,5 +1,5 @@
 body{
-    background-image: url("images/whitepurple.jpg");
+    background-image: url("images/login-signup/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -115,7 +115,7 @@ button:hover {
 @media screen and (min-width: 768px) {
 
     body {
-        background: url('images/whitepurple.jpg') no-repeat center center;
+        background: url('images/login-signup/bg.jpg') no-repeat center center;
         background-size: cover;
         margin: 0;
         height: 100vh; 
