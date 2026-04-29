@@ -93,16 +93,7 @@
         </div>
     </div>
 
-    <!-- footer -->
-
-    <div id="footer"></div>
-    <script>
-        fetch("footer.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-    </script>
+    
     <script>
     let index = 0;
     const track = document.getElementById("track");
@@ -117,33 +108,33 @@
 
     
     <!-- categories -->
-    <div class="category">
-        <a href="academic.html" class="category-link">
+    <div class="category ">
+        <a href="academic.html" class="category-link scroll-animate">
             <div class="category_box"><h3><i data-lucide="graduation-cap"></i> <strong> Academic </strong></h3></div>
         </a>
-        <a href="tech.html" class="category-link">
+        <a href="tech.html" class="category-link scroll-animate">
             <div class="category_box"><h3><i data-lucide="monitor-smartphone"></i> <strong>Tech Gadget</strong></h3></div>
         </a>
     </div>
 
     <!-- sections -->
 
-    <div class="sections">
+    <div class="sections ">
 
         <!-- Search / Filter Results -->
-        <div id="resultsSection" style="display: none;">
+        <div id="resultsSection " style="display: none;">
             <h2 id="resultsTitle">Search Results</h2>
-            <div class="product-row" id="resultsContainer"></div>
+            <div class="product-row scroll-animate" id="resultsContainer"></div>
         </div>
         <!-- Trending section -->
             <h2><strong>Trending</strong></h2>
-            <div id="trendingContainer" class="product-row"></div>
+            <div id="trendingContainer" class="product-row scroll-animate"></div>
         <!-- Recently Added Section -->
             <h2><strong>Recently Added</strong></h2>
-            <div id="recentContainer" class="product-row"></div>
+            <div id="recentContainer" class="product-row scroll-animate"></div>
         <!-- Recommendation Section -->
             <h2><strong>Recommendation</strong></h2>
-            <div id="recommendContainer" class="product-row"></div>
+            <div id="recommendContainer" class="product-row scroll-animate"></div>
 
     </div>
 
@@ -182,5 +173,32 @@
 
 <script src="js/products.js"></script>
 <script src="js/marketplace.js"></script>
+    <script>
+        const elements = document.querySelectorAll('.scroll-animate');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show'); // 👈 THIS LINE FIXES IT
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
+<!-- footer -->
+
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+    </script>
 </body>
 </html>

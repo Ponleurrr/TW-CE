@@ -1,4 +1,4 @@
-        .category {
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');        .category {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -56,23 +56,19 @@
             top: 5px;
             width: 100%;
             
-            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* keep search centered */
 
             z-index: 1000;
-
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            align-items: center;
-
-            overflow: visible;
         }
 
         .search-bar {
             border: 20px;
             border-radius: 20px;
-            border: 2px solid rgb(72, 0, 72);
+            border: 1px solid #e2cdf6;
             transition: all 0.25s ease;
+            
 
             font-family: 'Quicksand', sans-serif; 
             font-size: 16px; 
@@ -89,14 +85,15 @@
         }
 
         .search-bar:focus {
+            outline: #541b76;
+            border: 2px solid;
             transform: translateY(-4px);
-            border-color: #7c3aed;
-            box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+            border-color: #541b76;
         }
 
         .search-icon {
             position: absolute;
-            left: 10px; /* inside input */
+            margin-left: 9px; /* inside input */
             top: 50%;
             transform: translateY(-50%);
             width: 20px;
@@ -107,6 +104,10 @@
 
         .search-wrapper {
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
         }
 
         .search-icon {
@@ -157,18 +158,28 @@
 
         /* icon button */
         .filter-button {
-            background: white;
-            border: 1px solid #e5e5e5;
-            padding: 10px;
-            border-radius: 12px;
+            padding: 8px;
+            color: #541b76;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            border: 1px solid #e2cdf6;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: transform 0.3s ease;
         }
 
         .filter-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(124, 58, 237, 0.15);
             border-color: #c4b5fd;
+        }
+        .filter-button:focus {
+            outline: #541b76;
+            border: 2px solid;
+            transform: translateY(-4px);
+            border-color: #541b76;
         }
 
         /* dropdown box */
@@ -306,7 +317,7 @@
         }
 
         .logo {
-            height: 80px; 
+            height: 64px; 
             width: auto;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -338,7 +349,7 @@
 
         .product-row {
             display: flex;
-            gap: 20px;
+            gap: 10px;
 
             overflow-x: auto;
             overflow-y: visible;
@@ -364,11 +375,11 @@
 
         .product-card {
             background: white;
-            border: 2px solid rgb(140, 113, 150);
+            border: 1px solid rgb(140, 113, 150);
             border-radius: 15px;
             padding: 10px;
             
-            flex: 0 0 220px;
+            flex: 0 0 260px;
             transition: transform 0.2s;
             
             position: relative;
@@ -397,7 +408,7 @@
 
         .product-card img {
             width: 100%;
-            height: 260px;
+            height: 300px;
             object-fit: cover;
             padding: 3px;
             border-radius: 15px;
@@ -419,7 +430,8 @@
 
         .name {
             flex: 1;
-            font-size: 16px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 17px;
             font-weight: 600;
             color: rgb(117, 33, 138);
 
@@ -433,7 +445,7 @@
         }
 
         .sold-by {
-            color: rgb(92, 91, 91);
+            color: #541b76;
             font-size: 12px;
             margin: 0;
             font-family: 'Quicksand', sans-serif;
@@ -538,7 +550,7 @@
 
             border-radius: 10px;
 
-            font-size: 12px;
+            font-size: 14px;
             cursor: pointer;
 
             transition: 0.2s;
@@ -553,7 +565,7 @@
         .cart {
             background: white;
             color:  rgb(117, 33, 138);
-            border: 2px solid  rgb(117, 33, 138);
+            border: 1px solid  rgb(117, 33, 138);
         }
 
         button {
@@ -627,7 +639,7 @@
         .nav-icons {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 5px;
         }
         
         .nav-icons i {
@@ -636,9 +648,13 @@
         }
 
         .nav-icons {
+            position: absolute;
+            right: 20px;   /* move to right */
+            top: 50%;
+            transform: translateY(-50%);
+            
             display: flex;
-            gap: 15px;
-            margin-left: 20px;
+            gap: 5px;
         }
 
         .nav-icons i {
@@ -649,10 +665,21 @@
         }
 
         .nav-icons i:hover {
+            color: #7c3aed;
             transform: scale(1.15);
         }
 
         .nav-icons a {
-            padding: 8px;
+            padding: 4px;
             display: inline-block;
         }
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.7s ease;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}

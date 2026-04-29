@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/marketplace.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="images/twice_logo1.png">
     <style>
         .academic-container {
@@ -59,7 +60,7 @@
         .product-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 10px;
         }
 
         .category {
@@ -132,7 +133,7 @@
             min-width: 180px;  
 
             background: white;
-            border: 2px solid rgb(140, 113, 150);
+            border: 1px solid rgb(140, 113, 150);
             border-radius: 15px;
             padding: 10px;
 
@@ -223,11 +224,45 @@
         #resultsTitle {
             color: rgb(117, 33, 138);
         }
+        .nav-icons {
+            position: absolute;
+            right: 20px;   /* move to right */
+            top: 50%;
+            transform: translateY(-50%);
+            
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-icons i {
+            font-size: 20px;
+            color: #541b76;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-icons i:hover {
+            color: #7c3aed;
+            transform: scale(1.15);
+        }
+
+        .nav-icons a {
+            padding: 4px;
+            display: inline-block;
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     </style>
 </head>
 <body>
-
-    <!-- search and filter -->
         <div class="top-bar">
             <!-- Twice Logo -->
             <a href="marketplace.html" class="logo-link">
@@ -276,7 +311,19 @@
                     </div>
                 </div>
             </div>
+            <div class="nav-icons">
+
+                <!-- cart and profile icon -->
+                <a href="items.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a> 
+                <a href="profile.html">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+
+            </div>
         </div>
+
     
     <!-- categories -->
     
@@ -335,6 +382,32 @@
     </script>
     <script src="js/marketplace.js"></script>
     <script src="js/products.js"></script>
-    <script src="js/tech.js"></script> 
+    
+        <script>
+        const elements = document.querySelectorAll('.scroll-animate');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show'); // 👈 THIS LINE FIXES IT
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    
 </body>
 </html>

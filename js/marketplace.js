@@ -10,6 +10,7 @@ let currentFilters = {
     price: null,
     condition: null
 };
+
 let currentSubcategory = "all";
 
 function getFilteredProducts() {
@@ -158,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showResults(results);
             suggestionsBox.style.display = "none";
         }
+        
     });
 
     // filter Dropdown
@@ -340,8 +342,10 @@ function getMode() {
 
 function filterSubcategory(subcategory) {
     currentSubcategory = subcategory;
+    
 
-    // reset EVERYTHING cleanly
+    applyAll();
+
     currentKeyword = "";
 
     currentFilters = {
@@ -357,8 +361,9 @@ function filterSubcategory(subcategory) {
         r.checked = false;
     });
 
-    applyAll();
+    
 }
+
 
 
 
