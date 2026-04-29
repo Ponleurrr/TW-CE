@@ -85,7 +85,7 @@ body{
 
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1200px) {
     body{
         margin: 10px;
     }
