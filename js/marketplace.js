@@ -343,9 +343,8 @@ function getMode() {
 function filterSubcategory(subcategory) {
     currentSubcategory = subcategory;
     
-
     applyAll();
-
+    
     currentKeyword = "";
 
     currentFilters = {
