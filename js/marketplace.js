@@ -24,9 +24,9 @@ function getFilteredProducts() {
     }
 
     // 2. subcategory filter (ONLY ONCE)
-    if (window.currentSubcategory && window.currentSubcategory !== "all") {
+    if (currentSubcategory && currentSubcategory !== "all") {
         filtered = filtered.filter(
-            p => p.subcategory === window.currentSubcategory
+            p => p.subcategory === currentSubcategory
         );
     }
 
@@ -310,10 +310,12 @@ function showResults(list) {
         title.textContent = currentSubcategory.toUpperCase();
     } else if (mode === "search") {
         title.textContent = "Search Results";
-    } else if (mode === "filter") {
-        title.textContent = "Filter Results";
     } else if (mode === "both") {
         title.textContent = "Search & Filter Results";
+    } else if (mode === "subcategory") {
+        title.textContent =
+            currentSubcategory.charAt(0).toUpperCase() +
+            currentSubcategory.slice(1);
     } else {
         title.textContent = "All Products";
     }
@@ -325,11 +327,15 @@ function getMode() {
     const hasSearch = currentKeyword?.trim().length > 0;
 
     const hasFilter =
-        currentFilters.price !== null ||
-        currentFilters.condition !== null;
+        (currentFilters.price === "high" || currentFilters.price === "low") ||
+        (currentFilters.condition === "new" || currentFilters.condition === "used");
+
+    const hasSubcategory =
+        currentSubcategory !== null && currentSubcategory !== "all";
 
     if (hasSearch && hasFilter) return "both";
     if (hasSearch) return "search";
+    if (hasSubcategory) return "subcategory";
     if (hasFilter) return "filter";
 
     return "all";
@@ -338,16 +344,27 @@ function getMode() {
 function filterSubcategory(subcategory) {
     currentSubcategory = subcategory;
 
+    // reset EVERYTHING cleanly
+    currentKeyword = "";
+
     currentFilters = {
         price: null,
         condition: null
     };
 
-    currentKeyword = "";
+    document.querySelectorAll('input[name="price"]').forEach(r => {
+        r.checked = false;
+        r.value = ""; // force clear state
+    });
 
-    const filtered = products.filter(p => p.subcategory === subcategory);
-    showResults(filtered);
+    document.querySelectorAll('input[name="condition"]').forEach(r => {
+        r.checked = false;
+        r.value = "";
+    });
+
+    applyAll();
 }
+
 
 
 
