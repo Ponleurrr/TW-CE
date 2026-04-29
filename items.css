@@ -1,7 +1,4 @@
 
-* {
-
-}
 .archivo-black-regular {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
@@ -257,6 +254,59 @@ button {
 button:hover {
     background-color: #6f246f;
 }
+
+
+        .footer-wrapper {
+            background-color: #79508f; /* your theme color */
+            padding: 40px 20px;
+        }
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a a a"
+                "b c d"
+                "e e e";
+            gap: 20px;
+           
+        }
+        
+        .footer-category {
+            font-family: "Archivo Black", sans-serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+        .footer-item {
+            color: white;
+            font-size: 15px;
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Assign areas */
+        .footer-item:nth-child(1) { grid-area: a; }
+        .footer-item:nth-child(2) { grid-area: b; }
+        .footer-item:nth-child(3) { grid-area: c; }
+        .footer-item:nth-child(4) { grid-area: d; }
+        .footer-item:nth-child(5) { grid-area: e; }
+
+        .rights {
+            font-family: "Quicksand", sans-serif;
+            font-size: 15.4px;
+            color: white;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media (min-width: 1024px) {
+        .footer {
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+            grid-template-areas: "a b c d e"; /* reset grid areas */
+        }
+        }
+                
+    
 
 @media screen and (min-width: 768px) {
     
