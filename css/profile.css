@@ -416,39 +416,49 @@ input[type="radio"] {
   color: #541b76;
 }
 
-.footer-wrapper {
-  background-color: #79508f;
-  padding: 40px 20px;
-}
+        .footer-wrapper {
+            background-color: #79508f; /* your theme color */
+            padding: 40px;
+        }
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a a a"
+                "b c d"
+                "e e e";
+            gap: 20px;
+           
+        }
+        
+        .footer-category {
+            font-family: "Archivo Black", sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-item {
+            color: white;
+            font-size: 12px;
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Assign areas */
+        .footer-item:nth-child(1) { grid-area: a; }
+        .footer-item:nth-child(2) { grid-area: b; }
+        .footer-item:nth-child(3) { grid-area: c; }
+        .footer-item:nth-child(4) { grid-area: d; }
+        .footer-item:nth-child(5) { grid-area: e; }
 
-.footer {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "a a a"
-    "b c d"
-    "e e e";
-}
-
-.footer-item {
-  color: white;
-  line-height: 1.6;
-}
-
-.footer-category {
-  font-family: "Archivo Black", sans-serif;
-  margin-bottom: 10px;
-}
-
-.footer-item:nth-child(1) { grid-area: a; }
-.footer-item:nth-child(2) { grid-area: b; }
-.footer-item:nth-child(3) { grid-area: c; }
-.footer-item:nth-child(4) { grid-area: d; }
-.footer-item:nth-child(5) { grid-area: e; }
-
+        .rights {
+            font-family: "Quicksand", sans-serif;
+            font-size: 15.4px;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+        }
 .rights {
   text-align: center;
   color: white;
@@ -462,6 +472,11 @@ input[type="radio"] {
   }
 }
 
+@media (min-width: 769px) {
+  .profile-menu {
+    display: none;
+  }
+}
 
 /* 📱 Mobile view */
 @media (max-width: 768px) {
@@ -523,7 +538,7 @@ input[type="radio"] {
 /* dropdown container */
 .profile-menu {
   position: relative;
-  display: none; /* hidden on desktop */
+  
 }
 
 /* dropdown box */
