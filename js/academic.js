@@ -1,37 +1,79 @@
-const academicProducts = products.filter(
-    p => p.category === "academic"
-);
+
+let currentProducts = [];
+let currentPriceSort = "none";
+let selectedCondition = "all";
+
+// FROM products.js
+let allProducts = products;
 
 
+// INIT
 document.addEventListener("DOMContentLoaded", () => {
     filterSubcategory("all");
 });
 
-// subcategory
+
+// FILTER BY SUBCATEGORY
 function filterSubcategory(subcategory) {
-    window.currentSubcategory = subcategory;
 
-    currentKeyword = "";
+    document.querySelectorAll(".sidebar li")
+        .forEach(i => i.classList.remove("active"));
 
-    const searchInput = document.getElementById("searchInput");
-    if (searchInput) searchInput.value = "";
+    document.querySelector(`[data-subcategory="${subcategory}"]`)
+        ?.classList.add("active");
 
-    const items = document.querySelectorAll(".sidebar li");
-    items.forEach(i => i.classList.remove("active"));
+    let filtered = allProducts.filter(p =>
+    (p.category || "").toLowerCase() === "academic"
+);
 
-    const activeItem = document.querySelector(
-        `[data-subcategory="${subcategory}"]`
-    );
+    if (subcategory !== "all") {
+        filtered = filtered.filter(p =>
+    (p.subcategory || "").toLowerCase() === subcategory.toLowerCase()
+);
+    }
 
-    if (activeItem) activeItem.classList.add("active");
+    currentProducts = filtered;
 
-    const filtered = getFilteredProducts();
-
-    showResults(filtered);
+    applySortAndRender();
 }
 
-// render product cards
 
+// SORT
+function applySortAndRender() {
+
+    let list = [...currentProducts];
+
+    if (currentPriceSort === "low") {
+        list.sort((a, b) => a.price - b.price);
+    }
+
+    if (currentPriceSort === "high") {
+        list.sort((a, b) => b.price - a.price);
+    }
+
+    renderProducts(list);
+}
+
+
+// PRICE FILTER
+document.querySelectorAll('input[name="price"]').forEach(radio => {
+    radio.addEventListener("change", (e) => {
+        currentPriceSort = e.target.value;
+        applySortAndRender();
+    });
+});
+
+
+// CONDITION (optional, currently not filtering anything)
+document.querySelectorAll('input[name="condition"]').forEach(radio => {
+    radio.addEventListener("change", (e) => {
+        selectedCondition = e.target.nextElementSibling.textContent;
+        console.log("Condition selected:", selectedCondition);
+    });
+});
+
+
+// RENDER
 function renderProducts(list) {
     const container = document.getElementById("productContainer");
 
@@ -46,7 +88,8 @@ function renderProducts(list) {
                     <p>Trend</p>
                 </div>
             `;
-        } else if (p.badge === "new") {
+        } 
+        else if (p.badge === "new") {
             badgeHTML = `
                 <div class="new-badge">New</div>
             `;
@@ -55,14 +98,11 @@ function renderProducts(list) {
         return `
         <div class="product-card">
 
-            <a href="product.html?id=${p.id}">
-
+            <a href="#">
                 ${badgeHTML}
-
                 <img src="${p.image}" alt="${p.name}">
 
                 <div class="info">
-
                     <div class="top-row">
                         <p class="name">${p.name}</p>
                         <p class="price">$${p.price}</p>
@@ -74,12 +114,9 @@ function renderProducts(list) {
                         <button class="buy">Buy Now</button>
                         <button class="cart">Add to Cart</button>
                     </div>
-
                 </div>
-
             </a>
 
-            <!-- FAVORITE BUTTON -->
             <div class="favorite" data-product="${p.id}">
                 <i data-lucide="heart"></i>
             </div>
@@ -88,13 +125,22 @@ function renderProducts(list) {
         `;
     }).join("");
 
-    //IMPORTANT: re-render icons
     lucide.createIcons();
 }
 
-function toggleSidebar() {
-    document.querySelector(".sidebar").classList.toggle("active");
-    document.querySelector(".overlay").classList.toggle("active");
-}
+document.addEventListener("DOMContentLoaded", () => {
 
+    const filterBtn = document.getElementById("filterBtn");
+    const filterDropdown = document.getElementById("filterDropdown");
 
+    filterBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        filterDropdown.classList.toggle("show");
+    });
+
+    // close when clicking outside
+    document.addEventListener("click", () => {
+        filterDropdown.classList.remove("show");
+    });
+
+});

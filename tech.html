@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="images/twice_logo1.png">
     <style>
         .academic-container {
-            display: flex;
+            display: flex; 
             gap: 30px;
         }
 
@@ -140,6 +140,72 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
+                .filter-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.filter-dropdown.show {
+    display: block;
+}
+
+        .footer-wrapper {
+            background-color: #79508f; /* your theme color */
+            padding: 40px 20px;
+        }
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a a a"
+                "b c d"
+                "e e e";
+            gap: 20px;
+           
+        }
+        
+        .footer-category {
+            font-family: "Archivo Black", sans-serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+        .footer-item {
+            color: white;
+            font-size: 15px;
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Assign areas */
+        .footer-item:nth-child(1) { grid-area: a; }
+        .footer-item:nth-child(2) { grid-area: b; }
+        .footer-item:nth-child(3) { grid-area: c; }
+        .footer-item:nth-child(4) { grid-area: d; }
+        .footer-item:nth-child(5) { grid-area: e; }
+
+        .rights {
+            font-family: "Quicksand", sans-serif;
+            font-size: 15.4px;
+            color: white;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media (min-width: 1024px) {
+        .footer {
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+            grid-template-areas: "a b c d e"; /* reset grid areas */
+        }
+        }
+        
         @media (max-width: 768px) {
             .product-row {
                 justify-content: center;
@@ -375,13 +441,48 @@
 
     <div class="overlay" onclick="toggleSidebar()"></div>
 
+<footer class="footer-wrapper">
+        <div class="footer">
+            <div class="footer-item">
+                <div class="footer-category">About</div>
+                <div>TW!CE is a student-only secondhand marketplace designed to help high school and university students in Cambodia buy and sell study essentials safely and affordably.</div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-category">Quick Links</div>
+                <div>Home</div>
+                <div>Profile</div>
+                <div>Sell Items</div>
+                <div>Login & Sing up</div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-category">Categories</div>
+                <div>Academic</div>
+                <div>Tech Gadget</div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-category">Support</div>
+                <div>Help Center</div>
+                <div>Safety Guidelines</div>
+                <div>Privacy Policy</div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-category">Contact Info</div>
+                <div>Address: #278H, Street 201R, Khan Russey Keo, Phnom Penh, Cambodia</div>
+                <div>Phone: +855 123 456 789</div>
+                <div>Email: twice@gmail.com</div>
+            </div>
+        </div>
+        <div class="rights">© 2026 TW!CE. All rights reserved.</div>
+    </footer>
+
     <!-- icon link -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
     </script>
-    <script src="js/marketplace.js"></script>
+    
     <script src="js/products.js"></script>
+    <script src="js/tech.js"></script>
     
         <script>
         const elements = document.querySelectorAll('.scroll-animate');
@@ -400,14 +501,7 @@
 
         elements.forEach(el => observer.observe(el));
     </script>
-    <div id="footer"></div>
-    <script>
-        fetch("footer.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-    </script>
+    
     
 </body>
 </html>

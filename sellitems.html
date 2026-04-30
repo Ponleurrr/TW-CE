@@ -131,10 +131,21 @@
                 
                 <div class="form-actions">
                     <button class="cancel-btn">Cancel</button>
-                    <a href="marketplace.html" style="text-decoration: none; text-align: center;" class="post-btn">Post</a>
+                    <button type="button" class="post-btn" onclick="postItem()">Post</button>
                 </div>
             </div>
         </div>
     </main>
+
+<script>
+function postItem() {
+    // set flag before redirect
+    localStorage.setItem("postSuccess", "true");
+
+    // redirect
+    window.location.href = "marketplace.html";
+}
+</script>
+
 </body>
 </html>
