@@ -11,3 +11,4 @@ thumbs.forEach(box => {
         mainImg.src = box.querySelector('img').src;
     });
 });
+

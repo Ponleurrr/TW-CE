@@ -79,7 +79,7 @@ function renderProducts(list, containerId) {
         return `
     <div class="product-card">
 
-        <a href="product.html?id=${p.id}">
+        <a href="productdetail.html?id=${p.id}">
             ${badgeHTML}
             <img src="${p.image}" alt="${p.name}">
             <div class="info">
@@ -362,12 +362,6 @@ function filterSubcategory(subcategory) {
 
     
 }
-
-
-
-
-
-
 
 
 
