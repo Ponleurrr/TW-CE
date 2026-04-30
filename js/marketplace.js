@@ -80,25 +80,25 @@ function renderProducts(list, containerId) {
     <div class="product-card">
 
         <a href="productdetail.html?id=${p.id}">
-        //     ${badgeHTML}
-        //     <img src="${p.image}" alt="${p.name}">
-        //     <div class="info">
-        //         <div class="top-row">
-        //             <p class="name">${p.name}</p>
-        //             <p class="price">$${p.price}</p>
-        //         </div>
-        //         <p class="sold-by">Sold by ${p.seller}</p>
-        //     </div>
-        // </a>
+            ${badgeHTML}
+            <img src="${p.image}" alt="${p.name}">
+            <div class="info">
+                <div class="top-row">
+                    <p class="name">${p.name}</p>
+                    <p class="price">$${p.price}</p>
+                </div>
+                <p class="sold-by">Sold by ${p.seller}</p>
+            </div>
+        </a>
 
-        // <div class="buttons">
-        //     <button class="buy">Buy Now</button>
-        //     <button class="cart">Add to Cart</button>
-        // </div>
+        <div class="buttons">
+            <button class="buy">Buy Now</button>
+            <button class="cart">Add to Cart</button>
+        </div>
 
-        // <div class="favorite" data-product="${p.id}">
-        //     <i data-lucide="heart"></i>
-        // </div>
+        <div class="favorite" data-product="${p.id}">
+            <i data-lucide="heart"></i>
+        </div>
 
     </div>
     `;
