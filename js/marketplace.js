@@ -27,7 +27,7 @@ function getFilteredProducts() {
     // 2. subcategory filter (ONLY ONCE)
     if (currentSubcategory && currentSubcategory !== "all") {
         filtered = filtered.filter(
-            p => p.subcategory === currentSubcategory
+            p => p.subcategory?.toLowerCase() === currentSubcategory.toLowerCase()
         );
     }
 
@@ -53,6 +53,34 @@ function getFilteredProducts() {
     }
 
     return filtered;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const posted = localStorage.getItem("postSuccess");
+
+    if (posted === "true") {
+        showToast("Item posted successfully!");
+
+        // remove flag so it doesn't repeat
+        localStorage.removeItem("postSuccess");
+    }
+});
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
+function resetFilters() {
+    window.currentSubcategory = "all";
+    window.currentKeyword = "";
+    window.currentFilters = {};
 }
 
 // Render Products
@@ -227,8 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     priceRadios.forEach(radio => {
         radio.addEventListener("change", (e) => {
-            currentFilters.price = e.target.value.toLowerCase(); 
+            currentFilters.price = e.target.value;
             applyAll();
+
+            document.getElementById("filterDropdown").style.display = "none";
         });
     });
 
@@ -289,8 +319,15 @@ document.addEventListener("click", function (e) {
 // Main filter engine
 
 function applyAll() {
-    const filtered = getFilteredProducts();
-    showResults(filtered);
+    const sorted = getFilteredProducts();
+
+    const trending = sorted.filter(p => p.badge === "trending");
+    const recent = sorted.filter(p => p.badge === "new");
+    const recommend = sorted.filter(p => p.recommended === true);
+
+    renderProducts(trending, "trendingContainer");
+    renderProducts(recent, "recentContainer");
+    renderProducts(recommend, "recommendContainer");
 }
 
 // title changes based on search or filter, search result display
