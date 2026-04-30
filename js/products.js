@@ -38,7 +38,9 @@ const products = [
     category: "academic",
     subcategory: "books",
     badge: "new",
-    seller: "Daniel"
+    seller: "Daniel",
+
+    link: "productdetail.html"
   },
   {
     id: "exam-paper",
