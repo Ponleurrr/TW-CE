@@ -2,10 +2,8 @@ let currentProducts = [];
 let currentPriceSort = "none";
 let selectedCondition = "all";
 
-// use full dataset
 let allProducts = products;
 
-// INIT
 document.addEventListener("DOMContentLoaded", () => {
     filterSubcategory("all");
 

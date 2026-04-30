@@ -9,27 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="images/twice_logo1.png">
+    
     <style>
 
-        /* product cards container */
         .academic-container {
             display: flex;
             gap: 30px;
         }
-
-        /* side bar (subcategories) */
 
         .sidebar {
             width: 220px;
             position: sticky;
             top: 150px;
             height: fit-content;
-
             background: #ffffff;
             padding: 15px;
             border-radius: 16px;
             border: 1px solid #f1f1f1;
-
             box-shadow: 0 4px 12px rgba(175, 74, 201, 0.805);
         }
 
@@ -57,8 +53,6 @@
             font-weight: 600;
         }
 
-        /* product cards */
-
         .products {
             flex: 1;
         }
@@ -68,8 +62,6 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-
-        /* category */
 
         .category {
             display: flex;
@@ -127,8 +119,6 @@
             height: 20px;
         }
 
-        /* top bar */
-
         .top-bar {
             height: 60px;
         }
@@ -136,8 +126,6 @@
         body {
             padding-top: 60px;
         }
-
-        /* product cards */
 
         .product-card {
             flex: 1 1 220px;   
@@ -153,20 +141,20 @@
         }
 
         .filter-dropdown {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    z-index: 999;
-}
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
 
-.filter-dropdown.show {
-    display: block;
-}
+        .filter-dropdown.show {
+            display: block;
+        }
 
         .footer-wrapper {
             background-color: #79508f; /* your theme color */
@@ -236,8 +224,6 @@
             }
         }
 
-        /* menu toggle on small screen */
-
         .menu-toggle {
             display: none;
             font-size: 26px;
@@ -300,13 +286,12 @@
             display: block;
         }
 
-        /* Search and filter result title */
         #resultsTitle {
             color: rgb(117, 33, 138);
         }
         .nav-icons {
             position: absolute;
-            right: 20px;   /* move to right */
+            right: 20px;   
             top: 50%;
             transform: translateY(-50%);
             
@@ -339,19 +324,14 @@
         .scroll-animate.show {
             opacity: 1;
             transform: translateY(0) scale(1);
-        }
+        }      
         
-        
-
     </style>
 </head>
 <body>
 
-    <!-- search and filter -->
-
-    <!-- Search and filter -->
         <div class="top-bar">
-            <!-- Twice Logo -->
+            
             <a href="marketplace.html" class="logo-link">
                 <img src="images/twice_logo.png" alt="TWICE" class="logo">
             </a>
@@ -401,7 +381,6 @@
             </div>
             <div class="nav-icons">
 
-                <!-- cart and profile icon -->
                 <a href="items.html">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a> 
@@ -411,8 +390,7 @@
 
             </div>
         </div>
-
-        
+       
     
     <!-- categories -->
     
@@ -431,7 +409,6 @@
     </div>
 
     <div class="academic-container">
-    <!-- Left side: subcategories -->
 
         <div class="menu-toggle" onclick="toggleSidebar()">
             ⋮
@@ -447,12 +424,8 @@
             </ul>
         </div>
 
-   
-
-        <!-- Right side: products -->
         <div class="products">
 
-            <!-- Search / Filter Results -->
             <div id="resultsSection" style="display: none;">
                 <h2 id="resultsTitle">Search Results</h2>
                 <div class="product-row" id="resultsContainer"></div>
@@ -464,7 +437,7 @@
 
     <div class="overlay" onclick="toggleSidebar()"></div>
 
-<footer class="footer-wrapper">
+    <footer class="footer-wrapper">
         <div class="footer">
             <div class="footer-item">
                 <div class="footer-category">About</div>

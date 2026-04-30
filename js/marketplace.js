@@ -1,4 +1,3 @@
-// detect so that it can filter within the academic / tech category
 
 const isAcademicPage = window.location.pathname.includes("academic.html");
 const isTechPage = window.location.pathname.includes("tech.html");
@@ -60,8 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (posted === "true") {
         showToast("Item posted successfully!");
-
-        // remove flag so it doesn't repeat
         localStorage.removeItem("postSuccess");
     }
 });
@@ -82,6 +79,7 @@ function resetFilters() {
     window.currentKeyword = "";
     window.currentFilters = {};
 }
+
 
 // Render Products
 
@@ -134,6 +132,7 @@ function renderProducts(list, containerId) {
 
     lucide.createIcons();
 }
+
 
 // Initial Load (Homepage + Setup)
 
@@ -204,14 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // FIRST position it
         positionDropdown();
 
-        // THEN show it
         filterDropdown.style.display = "block";
     });
 
-    // prevent closing when clicking inside
     filterDropdown.addEventListener("click", function (e) {
         e.stopPropagation();
     });
@@ -229,12 +225,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let left = rect.left;
         let top = rect.bottom + 8;
 
-        // prevent overflow right
         if (left + dropdownWidth > window.innerWidth - padding) {
             left = window.innerWidth - dropdownWidth - padding;
         }
 
-        // prevent overflow left
         if (left < padding) {
             left = padding;
         }
@@ -270,8 +264,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// global click handler (Buy / cart / close dropdown)
-
 document.addEventListener("click", function (e) {
     console.log("Clicked:", e.target);
 
@@ -286,7 +278,7 @@ document.addEventListener("click", function (e) {
 
         console.log("BUY CLICKED:", name);
         alert("Buying: " + name);
-        return; // stop further logic
+        return; 
     }
 
     if (cartBtn) {
@@ -300,23 +292,21 @@ document.addEventListener("click", function (e) {
         return;
     }
 
-    //  only run this if NOT clicking buttons
     const filterDropdown = document.getElementById("filterDropdown");
     if (filterDropdown) {
         filterDropdown.style.display = "none";
     }
 
-    // close filter dropdown
+
 
     document.getElementById("filterDropdown").style.display = "none";
 
-    // close search suggestion box when clicking outside
+
     if (!e.target.closest("#searchInput") && !e.target.closest("#searchSuggestions")) {
         suggestionsBox.style.display = "none";
     }
 });
 
-// Main filter engine
 
 function applyAll() {
     const sorted = getFilteredProducts();
@@ -330,7 +320,6 @@ function applyAll() {
     renderProducts(recommend, "recommendContainer");
 }
 
-// title changes based on search or filter, search result display
 
 function showResults(list) {
     const section = document.getElementById("resultsSection");
@@ -396,8 +385,7 @@ function filterSubcategory(subcategory) {
     document.querySelectorAll('input[name="condition"]').forEach(r => {
         r.checked = false;
     });
-
-    
+ 
 }
 
 
